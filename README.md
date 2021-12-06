@@ -13,10 +13,12 @@ The employee data has been provided in the form of six .csv files. The departmen
 - Of those, more than half are engineering positions (as seen below)
 
 ![screenshot of total retiring employees by position title](queries/retiring_titles.png)
+
 *Total retiring employees by position title*
+
  - A query of employees eligible for mentorship (defined as born in the year 1965), returns around 1,500. 
  
-## Summary: Provide high-level responses to the following questions, then provide two additional queries or tables that may provide more insight into the upcoming "silver tsunami."
+## Summary
 
 ### How many roles will need to be filled as the "silver tsunami" begins to make an impact?
 About 30% of the company's total workforce will be retiring shortly, about 90,000 employees.
@@ -32,7 +34,9 @@ GROUP BY title
 ORDER BY COUNT(title) DESC;
 ```
 We get:
+
 ![screenshot of total employees eligible to mentor by position title](queries/mentors_titles.png)
+
 *Total employees eligible to mentor by position title*
 
 These results are still pointing to the same 60 to 1 ratio for mentee/mentor in engineering positions.
@@ -46,4 +50,4 @@ ON ut.emp_no = mi.emp_no
 WHERE ut.title = 'Manager'
 ORDER BY mi.dept_name;
 ```
-We find that **Research** and **Sales** will need to have the Manger position filled shortly.
+We find that **Research** and **Sales** will need to have the Manager position filled shortly.
